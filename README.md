@@ -1,5 +1,6 @@
 # Historical Manuscript Intelligence System
 **Live demo:** https://cayvgvfdkmbqzdrrldu2mt.streamlit.app/
+---
 A multi-agent natural language processing pipeline that transforms unstructured historical text into a structured, queryable knowledge graph. The system uses specialized language-model agents — orchestrated through LangGraph — to extract named entities, historical events, and temporal relationships from raw manuscripts, then persists the result as a property graph in Neo4j for downstream querying and analysis.
 
 Input
