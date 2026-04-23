@@ -10,7 +10,7 @@ Input
 
 
 
-**Live demo:** _add your Streamlit URL here after deployment_
+**Live demo:** https://cayvgvfdkmbqzdrrldu2mt.streamlit.app/
 
 ---
 
