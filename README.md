@@ -5,6 +5,9 @@ A multi-agent natural language processing pipeline that transforms unstructured 
 Input
 <img width="747" height="213" alt="image" src="https://github.com/user-attachments/assets/4f5f503f-e25a-49ae-a705-ca527699363f" />
 <img width="877" height="514" alt="image" src="https://github.com/user-attachments/assets/b3fca31c-8163-4e64-ab23-77ae0ea3acaa" />
+<img width="907" height="566" alt="image" src="https://github.com/user-attachments/assets/9323abc4-a6a2-4b5d-aa3e-c5b2b5ea2402" />
+<img width="872" height="626" alt="image" src="https://github.com/user-attachments/assets/eab2cdc7-4bde-49be-a22f-52a5657c025d" />
+
 
 
 **Live demo:** _add your Streamlit URL here after deployment_
@@ -115,7 +118,28 @@ Discover cross-document connections through shared locations:
 MATCH (p:Person)-[:PARTICIPATED_IN]->(e:Event)-[:OCCURRED_IN]->(l:Location {name: "France"})
 RETURN p.name, e.name, e.year ORDER BY e.year;
 ```
+// See everything
+MATCH (n) RETURN n LIMIT 100;
 
+// All people who participated in events
+MATCH (p:Person)-[:PARTICIPATED_IN]->(e:Event)
+RETURN p.name, e.name, e.year
+ORDER BY e.year;
+
+// Events that happened in each location
+MATCH (e:Event)-[:OCCURRED_IN]->(l:Location)
+RETURN l.name AS place, collect(e.name) AS events;
+
+// Who fought alongside whom? (people in the same event)
+MATCH (p1:Person)-[:PARTICIPATED_IN]->(e:Event)<-[:PARTICIPATED_IN]-(p2:Person)
+WHERE p1.name < p2.name
+RETURN p1.name, p2.name, e.name;
+
+// Timeline view
+MATCH (e:Event)
+WHERE e.year IS NOT NULL
+RETURN e.name, e.year
+ORDER BY e.year;
 ### Graph persistence semantics
 
 The `build_graph` routine uses `MERGE` rather than `CREATE`, which means entities with identical names are deduplicated across sessions. The UI exposes a "clear graph" toggle that controls whether each run replaces the existing graph or accumulates into it. Accumulation is the more interesting mode — it allows the graph to grow into a cross-document corpus where shared entities (a country, a major figure) become natural join points between independently processed texts.
