@@ -2,6 +2,11 @@
 
 A multi-agent natural language processing pipeline that transforms unstructured historical text into a structured, queryable knowledge graph. The system uses specialized language-model agents — orchestrated through LangGraph — to extract named entities, historical events, and temporal relationships from raw manuscripts, then persists the result as a property graph in Neo4j for downstream querying and analysis.
 
+Input
+<img width="747" height="213" alt="image" src="https://github.com/user-attachments/assets/4f5f503f-e25a-49ae-a705-ca527699363f" />
+<img width="877" height="514" alt="image" src="https://github.com/user-attachments/assets/b3fca31c-8163-4e64-ab23-77ae0ea3acaa" />
+
+
 **Live demo:** _add your Streamlit URL here after deployment_
 
 ---
