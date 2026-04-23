@@ -1,5 +1,5 @@
 # Historical Manuscript Intelligence System
-
+**Live demo:** https://cayvgvfdkmbqzdrrldu2mt.streamlit.app/
 A multi-agent natural language processing pipeline that transforms unstructured historical text into a structured, queryable knowledge graph. The system uses specialized language-model agents — orchestrated through LangGraph — to extract named entities, historical events, and temporal relationships from raw manuscripts, then persists the result as a property graph in Neo4j for downstream querying and analysis.
 
 Input
@@ -8,9 +8,6 @@ Input
 <img width="907" height="566" alt="image" src="https://github.com/user-attachments/assets/9323abc4-a6a2-4b5d-aa3e-c5b2b5ea2402" />
 <img width="872" height="626" alt="image" src="https://github.com/user-attachments/assets/eab2cdc7-4bde-49be-a22f-52a5657c025d" />
 
-
-
-**Live demo:** https://cayvgvfdkmbqzdrrldu2mt.streamlit.app/
 
 ---
 
@@ -197,7 +194,7 @@ manuscript-ai/
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/manuscript-ai.git
+git clone https://github.com/YOUR_USERNAME/manuscript-ai.git](https://github.com/aeshaharshad/Multi-Agent-Historical-Manuscript-Intelligence-System.git
 cd manuscript-ai
 
 python -m venv venv
